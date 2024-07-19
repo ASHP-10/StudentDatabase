@@ -1,26 +1,23 @@
-#include <iostream>
-#include <vector>
-#include "system.cpp"
+#include "student.h"
 
-class Student{
-    std::string name;
-    const int ID;
-    double grade;
+Student::Student(std::string name, int ID, double grade) : name(name), ID(ID), grade(grade) {}
 
-public:
-    Student(std::string name, int ID, double grade): name(name), ID(ID), grade(grade) {}
+int Student::getID() const{
+    return this -> ID;
+}
 
-    int getID() {
-        return this -> ID;
-    }
+std::string Student::getName() const{
+    return this -> name;
+}
 
-    std::string getName() {
-        return this -> name;
-    }
+double Student::getGrade() const{
+    return this -> grade;
+}
 
-    double getGrade() {
-        return this -> grade;
-    }
+void Student::setName(const std::string &name) {
+    this -> name = name;
+}
 
-    friend void system::editStudent();
-};
+void Student::setGrade(double grade) {
+    this -> grade = grade;
+}
